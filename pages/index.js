@@ -3,28 +3,11 @@ import useSWR from "swr";
 import { useState } from "react";
 import Image from "next/image"
 import FlowerCard from "../components/FlowerCard";
+import FlowersContainer from "../components/FlowersContainer";
 
-export default function Home() {
-  const [flowers, setFlowers] = useState(null);
+export default function Home(props) {
 
-  const fetcher = (url) => fetch(url).then((res) => res.json());
-  const url =
-    "https://arzcqb3s2d.execute-api.eu-west-2.amazonaws.com/prod/get-flowers";
 
-  const { data, error } = useSWR(url, fetcher);
-
-  const newFlowers = () => {
-    if (data && !flowers) {
-      const sliced = data.slice(0, 10);
-      setFlowers(sliced);
-      console.log(
-        `https://ronnholms-blommor-bilder.s3.eu-west-2.amazonaws.com/${data[0].imgName}`
-      );
-    }
-    return;
-  };
-
-  newFlowers();
 
   return (
     <div className="">
@@ -34,27 +17,18 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <div className="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-4 md:gap-x-2 md:gap-y-12 bg-neutral-50">
-          {data
-            ? data.map((flower, index) => (
-                <div className="h-[400px] md:h-[350px] flex flex-col mx-4 shadow-md rounded-3xl" onClick={() => setFlowers("lala")}>
-                  <div className="w-full h-4/5 relative">
-                    <Image
-                      src={`https://ronnholms-blommor-bilder.s3.eu-west-2.amazonaws.com/${flower.imgName}`}
-                      alt="lala"
-                      fill
-                      priority
-                      className="object-cover rounded-t-3xl"
-                    />
-                  </div>
-                  <div className="bg-white flex-1 flex items-center justify-center rounded-b-3xl">
-                    FlowerName
-                  </div>
-                </div>
-              ))
-            : null}
-        </div>
+        <FlowersContainer data={props.data}/>
       </main>
     </div>
   );
 }
+
+
+export const getStaticProps = async () => {
+  const data = await fetch(
+    "https://arzcqb3s2d.execute-api.eu-west-2.amazonaws.com/prod/get-flowers?type=initial&last=none"
+  ).then((response) => response.json());
+  return {
+    props: { data }
+  };
+};
