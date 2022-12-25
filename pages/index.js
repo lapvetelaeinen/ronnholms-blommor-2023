@@ -35,9 +35,9 @@ export default function Home() {
       </Head>
       <main>
         <div className="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-4 md:gap-x-2 md:gap-y-12 bg-neutral-50">
-          {flowers
-            ? flowers.map((flower, index) => (
-                <div className="h-[400px] md:h-[350px] flex flex-col mx-4 shadow-md rounded-3xl">
+          {data
+            ? data.map((flower, index) => (
+                <div className="h-[400px] md:h-[350px] flex flex-col mx-4 shadow-md rounded-3xl" onClick={() => setFlowers("lala")}>
                   <div className="w-full h-4/5 relative">
                     <Image
                       src={`https://ronnholms-blommor-bilder.s3.eu-west-2.amazonaws.com/${flower.imgName}`}
