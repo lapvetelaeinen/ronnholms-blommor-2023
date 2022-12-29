@@ -30,7 +30,6 @@ function MobileNav() {
 
   const toggleNav = () => {
     setIsOpen(!isOpen);
-    setIsNavOpen(!isNavOpen);
   }
 
 
@@ -104,7 +103,7 @@ function MobileNav() {
           </div>
           <div className="flex flex-col font-appareo text-xl text-neutral-200">
 
-            <Link href="/">
+            <Link href="/" onClick={() => toggleNav()}>
               <div className="flex items-center pl-6 border-b-2 py-4 border-red-300">
                 <Home fill="#f5f5f5" width="30px" height="30px" />
                 <p className="text-center leading-none pl-4">
