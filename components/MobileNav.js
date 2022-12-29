@@ -17,6 +17,7 @@ import { FormattedMessage, useIntl } from "react-intl";
 
 function MobileNav() {
   const { isNavOpen, setIsNavOpen } = useContext(NavStateContext);
+  const [isOpen, setIsOpen] = useState(false);
 
 
   const router = useRouter();
@@ -27,6 +28,10 @@ function MobileNav() {
 
   const { locales, locale } = useRouter();
 
+  const toggleNav = () => {
+    setIsOpen(!isOpen);
+    setIsNavOpen(!isNavOpen);
+  }
 
 
 
@@ -36,19 +41,19 @@ function MobileNav() {
     <>
       <div className="relative">
         <div className="bg-rose-600 flex justify-between items-center py-3 px-4 md:hidden">
-          {isNavOpen ? (
+          {isOpen ? (
             <Times
               fill="#f5f5f5"
               width="30px"
               height="30px"
-              onClick={() => setIsNavOpen(false)}
+              onClick={() => toggleNav()}
             />
           ) : (
             <Bars
               fill="#f5f5f5"
               width="30px"
               height="30px"
-              onClick={() => setIsNavOpen(true)}
+              onClick={() => toggleNav()}
             />
           )}
           <img src='/logo.svg' alt='next' className="w-[80px]"/>
@@ -56,13 +61,13 @@ function MobileNav() {
             fill="#f5f5f5"
             width="30px"
             height="30px"
-            onClick={() => setIsNavOpen(false)}
+            onClick={() => toggleNav()}
           />
         </div>
 
         <div
           className={`bg-red-400 w-full z-50 min-h-[100vh] absolute ${
-            isNavOpen ? "left-0" : "-left-full"
+            isOpen ? "left-0" : "-left-full"
           } transition-all ease-in-out duration-500`}
         >
           <div className="bg-slate-300 flex justify-between">
