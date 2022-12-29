@@ -95,10 +95,10 @@ function MobileNav() {
               </div>
             </Link>
           </div>
-          <div className="flex flex-col font-appareo text-4xl text-neutral-200">
+          <div className="flex flex-col font-appareo text-xl text-neutral-200">
 
             <Link href="/blommor">
-              <div className="flex items-center pl-6 border-b-2 py-8 border-red-300">
+              <div className="flex items-center pl-6 border-b-2 py-4 border-red-300">
                 <Flower fill="#f5f5f5" width="30px" height="30px" />
                 <p className="text-center leading-none pl-4">
                   Blommor
@@ -106,7 +106,7 @@ function MobileNav() {
               </div>
             </Link>
             <Link href="/kontakt">
-              <div className="flex items-center pl-6 border-b-2 py-8 border-red-300">
+              <div className="flex items-center pl-6 border-b-2 py-4 border-red-300">
                 <Phone fill="#f5f5f5" width="30px" height="30px" />
                 <p className="text-center leading-none pl-4">
                   Kontakt
@@ -114,7 +114,7 @@ function MobileNav() {
               </div>
             </Link>
             <Link href="/om-oss">
-              <div className="flex items-center pl-6 border-b-2 py-8 border-red-300">
+              <div className="flex items-center pl-6 border-b-2 py-4 border-red-300">
                 <Question fill="#f5f5f5" width="30px" height="30px" />
                 <p className="text-center leading-none pl-4">
                   Om oss
@@ -122,7 +122,7 @@ function MobileNav() {
               </div>
             </Link>
             <Link href="/oppettider">
-              <div className="flex items-center pl-6 border-b-2 py-8 border-red-300">
+              <div className="flex items-center pl-6 border-b-2 py-4 border-red-300">
                 <Clock fill="#f5f5f5" width="30px" height="30px" />
                 <p className="text-center leading-none pl-4">
                   Öppettider
@@ -130,7 +130,7 @@ function MobileNav() {
               </div>
             </Link>
             <Link href="/bildgalleri">
-              <div className="flex items-center pl-6 border-b-2 py-8 border-red-300">
+              <div className="flex items-center pl-6 border-b-2 py-4 border-red-300">
                 <Images fill="#f5f5f5" width="30px" height="30px" />
                 <p className="text-center leading-none pl-4">
                   Bildgalleri
@@ -138,7 +138,7 @@ function MobileNav() {
               </div>
             </Link>
             <Link href="/kontakt">
-              <div className="flex items-center pl-6 border-b-2 py-8 border-red-300">
+              <div className="flex items-center pl-6 border-b-2 py-4 border-red-300">
                 <Heart fill="#f5f5f5" width="30px" height="30px" />
                 <p className="text-center leading-none pl-4">
                   Min lista
