@@ -15,6 +15,8 @@ export default function Home(props) {
 
   useEffect(() => {
     isNavOpen ? document.body.style.overflow = "hidden" : document.body.style.overflow = "auto";
+    isNavOpen ? document.body.style.position = "fixed" : document.body.style.position = "static";
+    isNavOpen ? document.body.style.width = "100%" : null;
   })
 
   return (
