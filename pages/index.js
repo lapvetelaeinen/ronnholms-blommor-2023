@@ -1,4 +1,7 @@
 import Head from "next/head";
+import Link from "next/link";
+import { useRouter } from "next/router";
+import { FormattedMessage, useIntl } from "react-intl";
 import useSWR from "swr";
 import { useState } from "react";
 import Image from "next/image"
@@ -7,7 +10,9 @@ import FlowersContainer from "../components/FlowersContainer";
 
 export default function Home(props) {
 
+  const { locales } = useRouter();
 
+  const intl = useIntl();
 
   return (
     <div className="">
@@ -17,6 +22,10 @@ export default function Home(props) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
+
+        <p>
+        <FormattedMessage id="page.home.description" />
+        </p>
         <FlowersContainer data={props.data}/>
       </main>
     </div>
