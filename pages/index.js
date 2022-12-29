@@ -1,18 +1,21 @@
 import Head from "next/head";
-import Link from "next/link";
 import { useRouter } from "next/router";
 import { FormattedMessage, useIntl } from "react-intl";
-import useSWR from "swr";
-import { useState } from "react";
-import Image from "next/image"
-import FlowerCard from "../components/FlowerCard";
 import FlowersContainer from "../components/FlowersContainer";
+import { NavStateContext } from "../context/AppContext";
+import { useContext, useEffect } from "react";
 
 export default function Home(props) {
+
+  const { isNavOpen } = useContext(NavStateContext);
 
   const { locales } = useRouter();
 
   const intl = useIntl();
+
+  useEffect(() => {
+    isNavOpen ? document.body.style.overflow = "hidden" : document.body.style.overflow = "auto";
+  })
 
   return (
     <div className="">

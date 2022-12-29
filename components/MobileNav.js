@@ -1,6 +1,6 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { useRouter } from "next/router.js";
-import { useEffect } from "react";
+import { NavStateContext } from "../context/AppContext";
 import Bars from "./svg/Bars";
 import Times from "./svg/Times";
 import Heart from "./svg/Heart";
@@ -15,7 +15,8 @@ import Link from "next/link";
 import { FormattedMessage, useIntl } from "react-intl";
 
 function MobileNav() {
-  const [isOpen, setIsOpen] = useState(false);
+  const { isNavOpen, setIsNavOpen } = useContext(NavStateContext);
+
 
   const router = useRouter();
 
@@ -28,40 +29,38 @@ function MobileNav() {
 
 
 
-  useEffect(() => {
-    isOpen ? document.body.style.overflow = "hidden" : document.body.style.overflow = "auto";
-  })
+
 
   return (
     <>
       <div className="relative">
         <div className="bg-rose-600 flex justify-between items-center py-3 px-4 md:hidden">
-          {isOpen ? (
+          {isNavOpen ? (
             <Times
               fill="#f5f5f5"
               width="30px"
               height="30px"
-              onClick={() => setIsOpen(false)}
+              onClick={() => setIsNavOpen(false)}
             />
           ) : (
             <Bars
               fill="#f5f5f5"
               width="30px"
               height="30px"
-              onClick={() => setIsOpen(true)}
+              onClick={() => setIsNavOpen(true)}
             />
           )}
           <Heart
             fill="#f5f5f5"
             width="30px"
             height="30px"
-            onClick={() => setIsOpen(false)}
+            onClick={() => setIsNavOpen(false)}
           />
         </div>
 
         <div
           className={`bg-red-400 w-full z-50 min-h-[100vh] absolute ${
-            isOpen ? "left-0" : "-left-full"
+            isNavOpen ? "left-0" : "-left-full"
           } transition-all ease-in-out duration-500`}
         >
           <div className="bg-slate-300 flex justify-between">
