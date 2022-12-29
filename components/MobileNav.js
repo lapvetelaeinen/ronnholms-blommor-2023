@@ -9,6 +9,7 @@ import Phone from "./svg/Phone";
 import Question from "./svg/Question";
 import Images from "./svg/Images";
 import Clock from "./svg/Clock";
+import Home from "./svg/Home";
 import Se from "./svg/Se";
 import Fi from "./svg/Fi";
 import Link from "next/link";
@@ -50,6 +51,7 @@ function MobileNav() {
               onClick={() => setIsNavOpen(true)}
             />
           )}
+          <img src='/logo.svg' alt='next' className="w-[80px]"/>
           <Heart
             fill="#f5f5f5"
             width="30px"
@@ -97,6 +99,14 @@ function MobileNav() {
           </div>
           <div className="flex flex-col font-appareo text-xl text-neutral-200">
 
+            <Link href="/">
+              <div className="flex items-center pl-6 border-b-2 py-4 border-red-300">
+                <Home fill="#f5f5f5" width="30px" height="30px" />
+                <p className="text-center leading-none pl-4">
+                  Startsida
+                </p>
+              </div>
+            </Link>
             <Link href="/blommor">
               <div className="flex items-center pl-6 border-b-2 py-4 border-red-300">
                 <Flower fill="#f5f5f5" width="30px" height="30px" />
