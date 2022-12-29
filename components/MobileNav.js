@@ -1,4 +1,4 @@
-import { useState, useContext } from "react";
+import { useState, useContext, useEffect } from "react";
 import { useRouter } from "next/router.js";
 import { NavStateContext } from "../context/AppContext";
 import Bars from "./svg/Bars";
@@ -31,6 +31,12 @@ function MobileNav() {
   const toggleNav = () => {
     setIsOpen(!isOpen);
   }
+
+  useEffect(() => {
+    isOpen ? document.body.style.overflow = "hidden" : document.body.style.overflow = "auto";
+    isOpen ? document.body.style.position = "fixed" : document.body.style.position = "static";
+    isOpen ? document.body.style.width = "100%" : null;
+  })
 
 
 
