@@ -22,6 +22,8 @@ function MobileNav() {
 
   const router = useRouter();
 
+  const { asPath } = router;
+
   const clickLogo = () => {
     router.push("/");
   };
@@ -61,7 +63,10 @@ function MobileNav() {
               onClick={() => toggleNav()}
             />
           )}
+          <Link href="/" onClick={() => setIsOpen(false)}>
+
           <img src='/logo.svg' alt='next' className="w-[80px]"/>
+          </Link>
           <Heart
             fill="#f5f5f5"
             width="30px"
@@ -110,7 +115,7 @@ function MobileNav() {
           <div className="flex flex-col font-appareo text-xl text-neutral-200">
 
             <Link href="/" onClick={() => toggleNav()}>
-              <div className="flex items-center pl-6 border-b-2 py-4 border-red-300">
+              <div className={`flex items-center py-4 pl-6 border-b-2 ${asPath == "/" ? "bg-rose-500" : ""}`}>
                 <Home fill="#f5f5f5" width="30px" height="30px" />
                 <p className="text-center leading-none pl-4">
                   Startsida
@@ -118,7 +123,7 @@ function MobileNav() {
               </div>
             </Link>
             <Link href="/blommor">
-              <div className="flex items-center pl-6 border-b-2 py-4 border-red-300">
+              <div className={`flex items-center py-4 pl-6 border-b-2 ${asPath == "/blommor" ? "bg-rose-500" : ""}`}>
                 <Flower fill="#f5f5f5" width="30px" height="30px" />
                 <p className="text-center leading-none pl-4">
                   Blommor
@@ -126,7 +131,7 @@ function MobileNav() {
               </div>
             </Link>
             <Link href="/kontakt">
-              <div className="flex items-center pl-6 border-b-2 py-4 border-red-300">
+              <div className={`flex items-center py-4 pl-6 border-b-2 ${asPath == "/kontakt" ? "bg-rose-500" : ""}`}>
                 <Phone fill="#f5f5f5" width="30px" height="30px" />
                 <p className="text-center leading-none pl-4">
                   Kontakt
@@ -134,7 +139,7 @@ function MobileNav() {
               </div>
             </Link>
             <Link href="/om-oss">
-              <div className="flex items-center pl-6 border-b-2 py-4 border-red-300">
+              <div className={`flex items-center py-4 pl-6 border-b-2 ${asPath == "/om-oss" ? "bg-rose-500" : ""}`}>
                 <Question fill="#f5f5f5" width="30px" height="30px" />
                 <p className="text-center leading-none pl-4">
                   Om oss
@@ -142,23 +147,23 @@ function MobileNav() {
               </div>
             </Link>
             <Link href="/oppettider">
-              <div className="flex items-center pl-6 border-b-2 py-4 border-red-300">
+              <div className={`flex items-center py-4 pl-6 border-b-2 ${asPath == "/oppettider" ? "bg-rose-500" : ""}`}>
                 <Clock fill="#f5f5f5" width="30px" height="30px" />
                 <p className="text-center leading-none pl-4">
                   Öppettider
                 </p>
               </div>
             </Link>
-            <Link href="/bildgalleri">
-              <div className="flex items-center pl-6 border-b-2 py-4 border-red-300">
+            <Link href="/galleri">
+              <div className={`flex items-center py-4 pl-6 border-b-2 ${asPath == "/galleri" ? "bg-rose-500" : ""}`}>
                 <Images fill="#f5f5f5" width="30px" height="30px" />
                 <p className="text-center leading-none pl-4">
                   Bildgalleri
                 </p>
               </div>
             </Link>
-            <Link href="/kontakt">
-              <div className="flex items-center pl-6 border-b-2 py-4 border-red-300">
+            <Link href="/min-lista">
+              <div className={`flex items-center py-4 pl-6 border-b-2 ${asPath == "/min-lista" ? "bg-rose-500" : ""}`}>
                 <Heart fill="#f5f5f5" width="30px" height="30px" />
                 <p className="text-center leading-none pl-4">
                   Min lista

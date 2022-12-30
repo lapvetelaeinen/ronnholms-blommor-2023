@@ -24,9 +24,7 @@ export default function Home(props) {
       </Head>
       <main>
 
-        <p>
-        <FormattedMessage id="page.home.description" />
-        </p>
+        <h1 className="text-4xl font-heading font-medium">Sommarblommor odlade i Närpes</h1>
         <FlowersContainer data={props.data}/>
       </main>
     </div>
@@ -36,7 +34,7 @@ export default function Home(props) {
 
 export const getStaticProps = async () => {
   const data = await fetch(
-    "https://arzcqb3s2d.execute-api.eu-west-2.amazonaws.com/prod/get-flowers?type=initial&last=none"
+                "https://arzcqb3s2d.execute-api.eu-west-2.amazonaws.com/prod/get-flowers?type=initial&last=none"
   ).then((response) => response.json());
   return {
     props: { data }
