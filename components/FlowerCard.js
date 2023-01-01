@@ -5,7 +5,7 @@ import HeartLight from "./svg/HeartLight";
 export default function FlowerCard({ data }) {
   return (
     <div className="flex flex-col">
-      <div className="min-w-[200px] h-[250px] relative bg-white shadow-md">
+      <div className="w-[200px] h-[250px] relative bg-white shadow-md">
         <Image
           src={`https://ronnholms-blommor-bilder.s3.eu-west-2.amazonaws.com/${data.imgName}`}
           alt="lala"
@@ -20,7 +20,7 @@ export default function FlowerCard({ data }) {
           <HeartLight width={40} fill="Gainsboro"/>
         </div>
       </div>
-      <h3 className="text-lg p-2 font-bread font-semibold text-neutral-600">
+      <h3 className="text-lg p-2 font-bread font-semibold text-neutral-600 w-[200px]">
         {data.name}
       </h3>
       <p className="font-bread italic pl-2 text-neutral-400">{data.category}</p>

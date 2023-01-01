@@ -5,7 +5,7 @@ import Footer from "./Footer";
 export default function Layout({ children }) {
   return (
     <>
-    <div className="bg-yellow-100">
+    <div className="bg-white">
       <MobileNav />
       <DesktopNav />
       <div className="min-h-screen">

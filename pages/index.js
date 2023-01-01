@@ -38,19 +38,19 @@ export default function Home(props) {
             </Link>
           </div>
         </div>
-        <div>
-          <div className="flex justify-between items-center bg-neutral-100">
+        <div className="md:p-14">
+          <div className="flex justify-between md:flex-col items-center bg-neutral-100">
             <h2 className="p-4 text-5xl font-heading leading-normal">
               Våra blommor
             </h2>
             <Link href="/blommor">
 
-            <button className="p-2 bg-rose-500 mr-4 rounded-3xl text-sm text-neutral-200 h-16 shadow-lg">
+            <button className="p-2 bg-rose-500 mr-4 rounded-3xl text-sm text-neutral-200 h-16 shadow-lg md:mb-10">
               Se alla blommor
             </button>
             </Link>
           </div>
-          <div className="flex overflow-x-auto gap-6 p-4 bg-neutral-100">
+          <div className="flex overflow-x-auto gap-6 p-4 bg-neutral-100 md:flex-wrap md:justify-between md:px-24">
             {flowers.map((flower) => (
               <FlowerCard data={flower} />
             ))}

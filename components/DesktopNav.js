@@ -22,7 +22,7 @@ function DesktopNav() {
 
   return (
     <>
-      <div className="bg-rose-600 hidden md:flex justify-between items-center">
+      <div className="bg-rose-600 hidden md:flex justify-between items-center fixed z-50 w-full">
         <Link href="/" className="pl-6">
           <img src="/logo.svg" alt="next" className="w-[150px]" />
         </Link>

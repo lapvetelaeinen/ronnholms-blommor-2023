@@ -46,6 +46,7 @@ function MobileNav() {
 
   return (
     <>
+    <div className="fixed z-50 w-full">
       <div className="relative">
         <div className="bg-rose-600 flex justify-between items-center py-3 px-4 md:hidden">
           {isOpen ? (
@@ -172,6 +173,7 @@ function MobileNav() {
             </Link>
           </div>
         </div>
+      </div>
       </div>
     </>
   );
