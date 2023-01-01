@@ -3,10 +3,12 @@ import { useRouter } from "next/router";
 import { FormattedMessage, useIntl } from "react-intl";
 import FlowersContainer from "../components/FlowersContainer";
 import { NavStateContext } from "../context/AppContext";
-import { useContext, useEffect } from "react";
+import { useContext, useEffect, useState } from "react";
 import Link from "next/link";
+import FlowerCard from "../components/FlowerCard";
 
 export default function Home(props) {
+  const [flowers, setFlowers] = useState(props.data);
 
   const { isNavOpen } = useContext(NavStateContext);
 
@@ -14,7 +16,7 @@ export default function Home(props) {
 
   const intl = useIntl();
 
-
+  console.log("THIS IS DATA: ", props.data);
 
   return (
     <div className="">
@@ -24,28 +26,32 @@ export default function Home(props) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-
-      <div className="bg-[url(/solros.jpg)] bg-cover relative cursor-pointer h-[400px] md:h-[550px]">
-                <div className="flex flex-col justify-center items-center bg-black bg-opacity-40 w-full px-10 py-8 md:py-8 md:px-12 h-[400px] md:h-[550px]">
-                    <h1 className="text-white text-3xl font-heading text-center leading-normal">Sommarblommor odlade i Närpes</h1>
-                    <Link href="/oppettider">
-                    <button className="text-neutral-200 py-4 px-6 rounded-xl mt-10 bg-rose-500 shadow-lg">
-                    Platser och öppettider
-                    </button>
-                    </Link>
-                </div>
-            </div>
+        <div className="bg-[url(/solros.jpg)] bg-cover relative cursor-pointer h-[400px] md:h-[550px]">
+          <div className="flex flex-col justify-center items-center bg-black bg-opacity-40 w-full px-10 py-8 md:py-8 md:px-12 h-[400px] md:h-[550px]">
+            <h1 className="text-white text-3xl font-heading text-center leading-normal">
+              Sommarblommor odlade i Närpes
+            </h1>
+            <Link href="/oppettider">
+              <button className="text-neutral-200 py-4 px-6 rounded-xl mt-10 bg-rose-500 shadow-lg">
+                Platser och öppettider
+              </button>
+            </Link>
+          </div>
+        </div>
+        <div className="flex overflow-x-auto gap-6 p-4">
+          {flowers.map((flower) => <FlowerCard data={flower}/>)}
+          
+        </div>
       </main>
     </div>
   );
 }
 
-
 export const getStaticProps = async () => {
   const data = await fetch(
-                "https://arzcqb3s2d.execute-api.eu-west-2.amazonaws.com/prod/get-flowers?type=initial&last=none"
+    "https://arzcqb3s2d.execute-api.eu-west-2.amazonaws.com/prod/get-flowers?type=initial&last=none"
   ).then((response) => response.json());
   return {
-    props: { data }
+    props: { data },
   };
 };
