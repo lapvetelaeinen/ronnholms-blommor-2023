@@ -4,9 +4,8 @@ import { FormattedMessage, useIntl } from "react-intl";
 import FlowersContainer from "../components/FlowersContainer";
 import { NavStateContext } from "../context/AppContext";
 import { useContext, useEffect } from "react";
-import Link from "next/link";
 
-export default function Home(props) {
+export default function Blommor(props) {
 
   const { isNavOpen } = useContext(NavStateContext);
 
@@ -24,17 +23,7 @@ export default function Home(props) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-
-      <div className="bg-[url(/solros.jpg)] bg-cover relative cursor-pointer h-[400px] md:h-[550px]">
-                <div className="flex flex-col justify-center items-center bg-black bg-opacity-40 w-full px-10 py-8 md:py-8 md:px-12 h-[400px] md:h-[550px]">
-                    <h1 className="text-white text-3xl font-heading text-center leading-normal">Sommarblommor odlade i Närpes</h1>
-                    <Link href="/oppettider">
-                    <button className="text-neutral-200 py-4 px-6 rounded-xl mt-10 bg-rose-500 shadow-lg">
-                    Platser och öppettider
-                    </button>
-                    </Link>
-                </div>
-            </div>
+        <FlowersContainer data={props.data}/>
       </main>
     </div>
   );

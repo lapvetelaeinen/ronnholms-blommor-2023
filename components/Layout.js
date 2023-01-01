@@ -8,7 +8,7 @@ export default function Layout({ children }) {
     <div className="bg-yellow-100">
       <MobileNav />
       <DesktopNav />
-      <div className="min-h-screen my-10">
+      <div className="min-h-screen">
       {children}
       </div>
       <Footer />
