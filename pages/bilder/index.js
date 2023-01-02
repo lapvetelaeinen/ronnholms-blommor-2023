@@ -13,7 +13,7 @@ export default function Gallery() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="pt-[59px] bg-neutral-100">
-        <div className="bg-[url(/galleri.jpg)] bg-cover bg-bottom md:bg-center relative h-[200px] md:h-[200px]">
+        <div className="bg-[url(/galleri2.jpg)] bg-cover bg-bottom md:bg-center relative h-[200px] md:h-[200px]">
           <div className="flex flex-col justify-center items-center bg-black bg-opacity-40 w-full px-10 py-8 md:py-8 md:px-12 h-[200px] md:h-[200px]">
             <h1 className="text-white text-3xl font-heading text-center leading-normal">
               Bildgalleri
