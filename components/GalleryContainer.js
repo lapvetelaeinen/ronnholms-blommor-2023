@@ -22,7 +22,7 @@ export default function GalleryContainer({ data }){
 
     return(
 <>
-<div className="flex flex-col gap-12">
+<div className="flex flex-col gap-12 pt-20 pb-32 md:flex-row justify-center items-center md:flex-wrap md:items-baseline">
 
           {images
             ? images.map((image, index) => (

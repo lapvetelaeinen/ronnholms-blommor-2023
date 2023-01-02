@@ -12,9 +12,16 @@ const router = useRouter();
 
   return (
 
-      <main>
+      <main className="pt-[59px] md:pt-[100px] bg-neutral-100 flex flex-col items-center">
 
-        <h1 className="text-4xl font-heading font-medium">Bilder från Närpes Stad</h1>
+<div className="bg-yellow-100 border-b-2 border-dashed border-neutral-600 md:mt-10 md:w-[50vw] md:text-center md:border-none md:shadow-md md:p-8">
+        <h3 className="p-4 text-5xl font-heading leading-normal text-neutral-900">
+          Närpes Stad
+        </h3>
+        <p className="px-4 pb-8 text-xl font-bread leading-normal text-neutral-600">
+          Under tre somrar har vi fått äran att dekorera gatorna av Närpes Stad med våra blommor!
+        </p>
+      </div>
         <GalleryContainer data={props.data}/>
 
       </main>

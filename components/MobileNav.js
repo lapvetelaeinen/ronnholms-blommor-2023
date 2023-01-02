@@ -148,7 +148,7 @@ function MobileNav() {
                   <p className="text-center leading-none pl-4">Startsida</p>
                 </div>
               </Link>
-              <Link href="/blommor">
+              <Link href="/blommor"  onClick={() => toggleNav()}>
                 <div
                   className={`flex items-center py-4 pl-6 border-b-2 ${
                     asPath == "/blommor" ? "bg-rose-500" : ""
@@ -158,7 +158,7 @@ function MobileNav() {
                   <p className="text-center leading-none pl-4">Blommor</p>
                 </div>
               </Link>
-              <Link href="/kontakt">
+              <Link href="/kontakt" onClick={() => toggleNav()}>
                 <div
                   className={`flex items-center py-4 pl-6 border-b-2 ${
                     asPath == "/kontakt" ? "bg-rose-500" : ""
@@ -168,7 +168,7 @@ function MobileNav() {
                   <p className="text-center leading-none pl-4">Kontakt</p>
                 </div>
               </Link>
-              <Link href="/om-oss">
+              <Link href="/om-oss" onClick={() => toggleNav()}>
                 <div
                   className={`flex items-center py-4 pl-6 border-b-2 ${
                     asPath == "/om-oss" ? "bg-rose-500" : ""
@@ -178,7 +178,7 @@ function MobileNav() {
                   <p className="text-center leading-none pl-4">Om oss</p>
                 </div>
               </Link>
-              <Link href="/oppettider">
+              <Link href="/oppettider" onClick={() => toggleNav()}>
                 <div
                   className={`flex items-center py-4 pl-6 border-b-2 ${
                     asPath == "/oppettider" ? "bg-rose-500" : ""
@@ -188,17 +188,17 @@ function MobileNav() {
                   <p className="text-center leading-none pl-4">Öppettider</p>
                 </div>
               </Link>
-              <Link href="/galleri">
+              <Link href="/bilder" onClick={() => toggleNav()}>
                 <div
                   className={`flex items-center py-4 pl-6 border-b-2 ${
-                    asPath == "/galleri" ? "bg-rose-500" : ""
+                    asPath == "/bilder" ? "bg-rose-500" : ""
                   }`}
                 >
                   <Images fill="#f5f5f5" width="30px" height="30px" />
                   <p className="text-center leading-none pl-4">Bilder</p>
                 </div>
               </Link>
-              <Link href="/min-lista">
+              <Link href="/min-lista" onClick={() => toggleNav()}>
                 <div
                   className={`flex items-center py-4 pl-6 border-b-2 ${
                     asPath == "/min-lista" ? "bg-rose-500" : ""

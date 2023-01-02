@@ -2,7 +2,7 @@ import Head from "next/head";
 import { useRouter } from "next/router";
 import { FormattedMessage, useIntl } from "react-intl";
 
-export default function Gallery(props) {
+export default function Gallery() {
   const router = useRouter();
 
   return (
@@ -13,7 +13,7 @@ export default function Gallery(props) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="pt-[59px] bg-neutral-100">
-        <div className="bg-[url(/galleri.jpg)] bg-cover bg-bottom md:bg-center relative cursor-pointer h-[200px] md:h-[200px]">
+        <div className="bg-[url(/galleri.jpg)] bg-cover bg-bottom md:bg-center relative h-[200px] md:h-[200px]">
           <div className="flex flex-col justify-center items-center bg-black bg-opacity-40 w-full px-10 py-8 md:py-8 md:px-12 h-[200px] md:h-[200px]">
             <h1 className="text-white text-3xl font-heading text-center leading-normal">
               Bildgalleri
@@ -37,7 +37,7 @@ export default function Gallery(props) {
         <div className="mx-4 pt-20 pb-32 flex flex-col gap-2 md:flex-row md:justify-center">
           <div
             className="bg-[url(/vaxthus.jpg)] bg-cover relative cursor-pointer"
-            onClick={() => router.push("/galleri/vaxthus")}
+            onClick={() => router.push("/bilder/vaxthus")}
           >
             <div className="flex flex-col justify-center items-center bg-black bg-opacity-40 w-full py-8 md:py-8 md:px-12">
               <h3 className="text-white text-3xl font-heading">Vårt växthus</h3>
@@ -46,7 +46,7 @@ export default function Gallery(props) {
           </div>
           <div
             className="bg-[url(/narpes-stad.jpg)] bg-cover bg-center relative cursor-pointer"
-            onClick={() => router.push("/galleri/narpes-stad")}
+            onClick={() => router.push("/bilder/narpes-stad")}
           >
             <div className="flex flex-col justify-center items-center bg-black bg-opacity-40 w-full py-8 md:py-8 md:px-12">
               <h3 className="text-white text-3xl font-heading">Närpes Stad</h3>
@@ -55,10 +55,10 @@ export default function Gallery(props) {
           </div>
           <div
             className="bg-[url(/mosedal.jpg)] bg-cover relative bg-center cursor-pointer"
-            onClick={() => router.push("/galleri/mosedal")}
+            onClick={() => router.push("/bilder/sfim")}
           >
             <div className="flex flex-col justify-center items-center bg-black bg-opacity-40 w-full py-8 md:py-8 md:px-12">
-              <h3 className="text-white text-3xl font-heading">Mosedal</h3>
+              <h3 className="text-white text-3xl font-heading">SFIM 2021</h3>
               <p className="text-neutral-300 pt-4">Klicka för att se mer</p>
             </div>
           </div>
@@ -68,11 +68,3 @@ export default function Gallery(props) {
   );
 }
 
-export const getStaticProps = async () => {
-  const data = await fetch(
-    "https://arzcqb3s2d.execute-api.eu-west-2.amazonaws.com/prod/get-gallery?gallery=vaxthus"
-  ).then((response) => response.json());
-  return {
-    props: { data },
-  };
-};

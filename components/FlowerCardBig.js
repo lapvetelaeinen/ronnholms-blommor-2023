@@ -71,7 +71,7 @@ useEffect(() => {
               33vw"
           className="object-cover overflow-hidden"
         />
-        <div className={`${liked ? "absolute right-0 top-0 p-4" : "absolute right-0 bottom-0 p-4"}`} onClick={() => likeFlower(data)}>
+        <div className={`cursor-pointer ${liked ? "absolute right-0 top-0 p-4" : "absolute right-0 bottom-0 p-4"}`} onClick={() => likeFlower(data)}>
             {liked ? <TimesCircle width={40} fill="Gainsboro"/> : isLiked ? <HeartSolid width={40} fill="salmon"/> : <HeartLight width={40} fill="Gainsboro"/>}
           
         </div>

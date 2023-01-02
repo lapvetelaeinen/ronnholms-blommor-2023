@@ -3,14 +3,18 @@ import { useRouter } from "next/router";
 import { FormattedMessage, useIntl } from "react-intl";
 import FlowersContainer from "../components/FlowersContainer";
 import { NavStateContext } from "../context/AppContext";
-import { useContext, useEffect } from "react";
+import { useContext, useEffect, useState } from "react";
 
-export default function Blommor(props) {
+export default function Blommor() {
   const { isNavOpen } = useContext(NavStateContext);
+  const [flowers, setFlowers] = useState([]);
 
   const { locales } = useRouter();
 
   const intl = useIntl();
+
+
+
 
   return (
     <div className="">
@@ -20,7 +24,7 @@ export default function Blommor(props) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="pt-[59px] bg-neutral-100">
-        <div className="bg-[url(/rod-blomma.jpg)] bg-cover bg-bottom md:bg-center relative cursor-pointer h-[200px] md:h-[200px]">
+        <div className="bg-[url(/rod-blomma2.jpg)] bg-cover bg-bottom md:bg-center relative h-[200px] md:h-[200px]">
           <div className="flex flex-col justify-center items-center bg-black bg-opacity-40 w-full px-10 py-8 md:py-8 md:px-12 h-[200px] md:h-[200px]">
             <h1 className="text-white text-3xl font-heading text-center leading-normal">
               Alla blommor
@@ -29,24 +33,16 @@ export default function Blommor(props) {
         </div>
         <div className="flex justify-center">
 
-        <div className="bg-yellow-100 border-b-4 border-dashed border-neutral-600 md:mt-10 md:w-[50vw] md:text-center md:border-2 md:p-8">
+        <div className="bg-yellow-100 border-b-2 border-dashed border-neutral-600 md:mt-10 md:w-[50vw] md:text-center md:border-2 md:p-8">
           <h3 className="p-4 text-5xl font-heading leading-normal text-neutral-900">
             Tips!
           </h3>
           <p className="px-4 pb-8 text-xl font-bread leading-normal text-neutral-600">Klicka på hjärtat så sparas blommorna i din lista. <br/> Visa upp listan när du besöker oss så får du snabb hjälp!</p>
         </div>
         </div>
-        <FlowersContainer data={props.data} />
+        <FlowersContainer />
       </main>
     </div>
   );
 }
 
-export const getStaticProps = async () => {
-  const data = await fetch(
-    "https://arzcqb3s2d.execute-api.eu-west-2.amazonaws.com/prod/get-flowers?type=initial&last=none"
-  ).then((response) => response.json());
-  return {
-    props: { data },
-  };
-};

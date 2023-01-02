@@ -60,8 +60,8 @@ function DesktopNav() {
               <p className="text-center leading-none pl-2">Öppettider</p>
             </div>
           </Link>
-          <Link href="/galleri">
-            <div className={`flex items-center hover:bg-rose-700 py-8 px-6 ${asPath == "/galleri" ? "bg-rose-700" : ""}`}>
+          <Link href="/bilder">
+            <div className={`flex items-center hover:bg-rose-700 py-8 px-6 ${asPath == "/bilder" ? "bg-rose-700" : ""}`}>
               <Images fill="#f5f5f5" width="20px" height="20px" />
               <p className="text-center leading-none pl-2">Bilder</p>
             </div>

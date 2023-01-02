@@ -6,9 +6,11 @@ import { NavStateContext } from "../context/AppContext";
 import { useContext, useEffect, useState } from "react";
 import Link from "next/link";
 import FlowerCard from "../components/FlowerCard";
+import profilePic from "../public/leif.webp";
+import Image from "next/image";
 
-export default function Home(props) {
-  const [flowers, setFlowers] = useState(props.data);
+export default function Home() {
+  const [flowers, setFlowers] = useState([]);
 
   const { isNavOpen } = useContext(NavStateContext);
 
@@ -16,7 +18,82 @@ export default function Home(props) {
 
   const intl = useIntl();
 
-  console.log("THIS IS DATA: ", props.data);
+  const initialFlowers = [
+    {
+      category: "Gypsophila Muralis",
+      stock: "yes",
+      sizes: "25 cm ampel",
+      name: "Brudslöja Gypsy Deeprose",
+      imgName: "gypsophila-muralis-gypsy-deeprose.jpg",
+    },
+    {
+      category: "Callie Lia",
+      stock: "yes",
+      sizes: "25 cm ampel",
+      name: "Callie Yellow Lia",
+      imgName: "calibrachoa-lia-yellow.png",
+    },
+    {
+      category: "Hedera Helix",
+      stock: "yes",
+      sizes: "12 cm kruka",
+      name: "Murgröna Mein Herz",
+      imgName: "hedera-helix-mein-herz.jpg",
+    },
+    {
+      category: "Lysimachia",
+      stock: "yes",
+      sizes: "12 cm kruka",
+      name: "Penningblad Goldilocks",
+      imgName: "lysimachia-goldilocks.jpg",
+    },
+    {
+      category: "Callie Million Bells",
+      stock: "yes",
+      sizes: "25 cm ampel",
+      name: "Million Bells Mix Bolero",
+      imgName: "calibrachoa-trixi-bolero.jpg",
+    },
+    {
+      category: "Red Profusion",
+      stock: "yes",
+      sizes: "25 cm ampel",
+      name: "Tomatampel",
+      imgName: "tomato-red.jpg",
+    },
+    {
+      category: "Begonia Doublet",
+      stock: "no",
+      sizes: "12 cm kruka",
+      name: "Isbegonia White Doublet",
+      imgName: "begonia-doublet-white.png",
+    },
+    {
+      category: "Callie Ombre",
+      stock: "yes",
+      sizes: "25 cm ampel",
+      name: "Callie Ombre Pink",
+      imgName: "calibrachoa-ombre-pink.png",
+    },
+    {
+      category: "Petunia",
+      stock: "yes",
+      sizes: "25 cm ampel",
+      name: "Petunia Tumbelina Victoria",
+      imgName: "petunia-tumbelina-victoria.jpg",
+    },
+    {
+      category: "Petunia",
+      stock: "yes",
+      sizes: "12 cm kruka",
+      name: "Petunia Dekko Magenta",
+      imgName: "petunia-dekko-magenta.jpg",
+    },
+  ];
+
+  useEffect(() => {
+    setFlowers(initialFlowers);
+  }, []);
 
   return (
     <div className="">
@@ -26,13 +103,13 @@ export default function Home(props) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="pt-[59px]">
-        <div className="bg-[url(/solros.jpg)] bg-cover relative cursor-pointer h-[400px] md:h-[550px]">
+        <div className="bg-[url(/solros2.jpg)] bg-cover relative h-[400px] md:h-[550px]">
           <div className="flex flex-col justify-center items-center bg-black bg-opacity-40 w-full px-10 py-8 md:py-8 md:px-12 h-[400px] md:h-[550px]">
-            <h1 className="text-white text-3xl font-heading text-center leading-normal">
+            <h1 className="text-white text-3xl font-heading text-center leading-normal mb-10">
               Sommarblommor odlade i Närpes
             </h1>
             <Link href="/oppettider">
-              <button className="text-neutral-200 py-4 px-6 rounded-xl mt-10 bg-rose-500 shadow-lg">
+              <button className="text-neutral-200 py-4 px-6 rounded-xl bg-rose-500 shadow-lg hover:bg-rose-600">
                 Platser och öppettider
               </button>
             </Link>
@@ -44,28 +121,96 @@ export default function Home(props) {
               Våra blommor
             </h2>
             <Link href="/blommor">
-
-            <button className="p-2 bg-rose-500 mr-4 rounded-3xl text-sm text-neutral-200 h-16 shadow-lg md:mb-10">
-              Se alla blommor
-            </button>
+              <button className="p-2 bg-rose-500 mr-4 md:mr-0 rounded-3xl text-sm text-neutral-200 h-16 shadow-lg hover:bg-rose-600">
+                Se alla blommor
+              </button>
             </Link>
           </div>
-          <div className="flex overflow-x-auto gap-6 p-4 bg-neutral-100 md:flex-wrap md:justify-between md:px-24">
+          <div className="flex overflow-x-auto gap-6 p-4 pb-12 bg-neutral-100 md:flex-wrap md:justify-between md:px-24 md:pt-10">
             {flowers.map((flower) => (
               <FlowerCard data={flower} />
             ))}
           </div>
+          <div className="hidden md:block">
+            <div className="flex justify-center flex-col items-center bg-neutral-100 pb-16">
+              <p className="text-center text-3xl font-heading pt-16 pb-8">
+                ...och många fler!
+              </p>
+              <Link href="/blommor" className="">
+                <button className="p-2 bg-rose-500 mr-4 md:mr-0 rounded-3xl text-sm text-neutral-200 h-16 shadow-lg hover:bg-rose-600">
+                  Se alla blommor
+                </button>
+              </Link>
+            </div>
+          </div>
         </div>
+        <div className="pb-36 bg-neutral-100">
+
+        <div className="p-4 pt-16 md:p-40 md:pb-20">
+          <div className="flex flex-col md:flex-row items-center gap-8">
+            <Image src={profilePic} width={`40vw`} className="rounded-full" />
+            <div className="md:pl-12">
+              <p className="text-xl md:text-2xl italic text-neutral-700">
+                År 2013 startade vi (Leif och Inger) verksamheten i liten skala
+                och sedan dess har den bara växt sig större och större. Nu gläds
+                vi åt att varje år få ta hjälp utav duktiga säsongsarbetare och
+                att få träffa trevliga kunder från alla olika håll.
+              </p>
+
+              <p className="text-xl md:text-2xl font-bread italic pt-8 text-neutral-700">
+                Vårt utbud av blommor består av livliga färger och rik
+                variation, allt från de vanligaste vår- och sommarblommorna till
+                Cannor, Hortensia amplar och Alstromerior. Dessutom prövar vi
+                varje år på nya sorter och färger för att göra din
+                blomsterhandling ännu mer intresssant! Vi köper största delen av
+                våra blommor som små sticklingar av inhemska leverantörer.
+              </p>
+            </div>
+          </div>
+          <p className="text-xl md:text-2xl font-bread italic pt-8 text-neutral-700 pb-8">
+            Vi säljer även tillbehör som torv och mylla samt utekrukor (bilder
+            kommer senare). Ta gärna kontakt med oss eller kom förbi vårt
+            växthus i Övermark så får du ta del av goda råd och förslag på vad
+            som passar till olika planteringar men även planteringshjälp! Vi har
+            även försäljning under högsäsongen maj-juli i ett litet växthus på
+            Tegelbruksvägen 1 i Närpes. Vår säsong börjar i februari och
+            sträcker sig till slutet av sommaren.
+          </p>
+          <div className="flex justify-center pt-8">
+
+          <Link href="/kontakt">
+            <button className="py-6 px-12 bg-rose-500 rounded-3xl text-2xl text-neutral-200 shadow-xl hover:bg-rose-600">
+              Kontakta oss
+            </button>
+          </Link>
+          </div>
+        </div>
+      </div>
+      <div className="bg-neutral-100 pb-20">
+        <div className="bg-[url(/galleri2.jpg)] bg-cover bg-bottom md:bg-center relative h-[400px] md:h-[300px]">
+          <div className="flex flex-col justify-center items-center bg-black bg-opacity-40 w-full px-10 py-8 md:py-8 md:px-12 h-[400px] md:h-[300px]">
+            <h1 className="text-white pb-4 text-2xl md:text-3xl font-heading text-center leading-normal">
+              Låt dig inspireras!
+            </h1>
+            <p className="px-4 pb-8 text-lg md:text-xl font-bread leading-normal text-neutral-200 text-center">
+            Våra sommarblommor lämpar sig bra i alla olika miljöer. <br />{" "}
+            Bläddra igenom vårt bildgalleri och hitta inspiration till dina egna
+            planteringar!
+          </p>
+          <Link href="/bilder">
+            <button className="py-4 px-16 bg-rose-500 rounded-3xl text-2xl text-neutral-200 shadow-xl hover:bg-rose-600">
+              Till galleriet
+            </button>
+          </Link>
+          </div>
+        </div>
+
+
+
+
+      </div>
       </main>
+      
     </div>
   );
 }
-
-export const getStaticProps = async () => {
-  const data = await fetch(
-    "https://arzcqb3s2d.execute-api.eu-west-2.amazonaws.com/prod/get-flowers?type=initial&last=none"
-  ).then((response) => response.json());
-  return {
-    props: { data },
-  };
-};
