@@ -26,14 +26,14 @@ export default function Om() {
           <div className="flex flex-col md:flex-row items-center gap-8">
             <Image src={profilePic} width={`40vw`} className="rounded-full" />
             <div className="md:pl-12">
-              <p className="text-2xl italic text-neutral-700">
+              <p className="text-xl md:text-2xl italic text-neutral-700">
                 År 2013 startade vi (Leif och Inger) verksamheten i liten skala
                 och sedan dess har den bara växt sig större och större. Nu gläds
                 vi åt att varje år få ta hjälp utav duktiga säsongsarbetare och
                 att få träffa trevliga kunder från alla olika håll.
               </p>
 
-              <p className="text-2xl font-bread italic pt-8 text-neutral-700">
+              <p className="text-xl md:text-2xl font-bread italic pt-8 text-neutral-700">
                 Vårt utbud av blommor består av livliga färger och rik
                 variation, allt från de vanligaste vår- och sommarblommorna till
                 Cannor, Hortensia amplar och Alstromerior. Dessutom prövar vi
@@ -43,7 +43,7 @@ export default function Om() {
               </p>
             </div>
           </div>
-          <p className="text-2xl font-bread italic pt-8 text-neutral-700 pb-8">
+          <p className="text-xl md:text-2xl font-bread italic pt-8 text-neutral-700 pb-8">
             Vi säljer även tillbehör som torv och mylla samt utekrukor (bilder
             kommer senare). Ta gärna kontakt med oss eller kom förbi vårt
             växthus i Övermark så får du ta del av goda råd och förslag på vad
