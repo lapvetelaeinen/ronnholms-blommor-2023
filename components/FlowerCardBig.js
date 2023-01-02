@@ -3,10 +3,10 @@ import { useState, useEffect, useContext } from "react";
 import { NavStateContext } from "../context/AppContext";
 import HeartSolid from "./svg/HeartSolid";
 import HeartLight from "./svg/HeartLight";
-import Times from "./svg/Times";
+import TimesCircle from "./svg/TimesCircle";
 import { setCookie, getCookie } from 'cookies-next';
 
-export default function FlowerCard({ data, liked }) {
+export default function FlowerCardBig({ data, liked }) {
 const [isLiked, setIsLiked] = useState(false);
 
 const { cookieFlowers, setCookieFlowers } = useContext(NavStateContext);
@@ -60,7 +60,7 @@ useEffect(() => {
 
   return (
     <div className="flex flex-col">
-      <div className="w-[200px] h-[250px] relative bg-white shadow-md">
+      <div className="w-[90vw] md:w-[300px] h-[400px] relative bg-white shadow-md">
         <Image
           src={`https://ronnholms-blommor-bilder.s3.eu-west-2.amazonaws.com/${data.imgName}`}
           alt="lala"
@@ -72,7 +72,7 @@ useEffect(() => {
           className="object-cover overflow-hidden"
         />
         <div className={`${liked ? "absolute right-0 top-0 p-4" : "absolute right-0 bottom-0 p-4"}`} onClick={() => likeFlower(data)}>
-            {liked ? <Times width={25} fill="black"/> : isLiked ? <HeartSolid width={40} fill="salmon"/> : <HeartLight width={40} fill="Gainsboro"/>}
+            {liked ? <TimesCircle width={40} fill="Gainsboro"/> : isLiked ? <HeartSolid width={40} fill="salmon"/> : <HeartLight width={40} fill="Gainsboro"/>}
           
         </div>
       </div>

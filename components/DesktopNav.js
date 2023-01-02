@@ -1,6 +1,8 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { useRouter } from "next/router.js";
+import { NavStateContext } from "../context/AppContext";
 import Heart from "./svg/Heart";
+import HeartSolid from "./svg/HeartSolid";
 import Flower from "./svg/Flower";
 import Phone from "./svg/Phone";
 import Question from "./svg/Question";
@@ -14,6 +16,7 @@ import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
 
 function DesktopNav() {
   const router = useRouter();
+  const { cookieFlowers, setCookieFlowers } = useContext(NavStateContext);
 
   const { pathname, asPath, query } = router;
 
@@ -60,15 +63,36 @@ function DesktopNav() {
           <Link href="/galleri">
             <div className={`flex items-center hover:bg-rose-700 py-8 px-6 ${asPath == "/galleri" ? "bg-rose-700" : ""}`}>
               <Images fill="#f5f5f5" width="20px" height="20px" />
-              <p className="text-center leading-none pl-2">Bildgalleri</p>
+              <p className="text-center leading-none pl-2">Bilder</p>
             </div>
           </Link>
-          <Link href="/min-lista">
-            <div className={`flex items-center hover:bg-rose-700 py-8 px-6 ${asPath == "/min-lista" ? "bg-rose-700" : ""}`}>
-              <Heart fill="#f5f5f5" width="20px" height="20px" />
-              <p className="text-center leading-none pl-2">Min lista</p>
-            </div>
-          </Link>
+          {cookieFlowers.length ? (
+              <Link href="/min-lista">
+              <div className="relative px-4 hover:bg-rose-700 py-7">
+                <HeartSolid
+                  fill="#f5f5f5"
+                  width="30px"
+                  height="30px"
+                  
+                />
+              <div className="absolute top-[20px] right-[1px] text-xs bg-red-300 rounded-full p-[10px]">
+                <div className="absolute top-[3px] right-[6px]">{cookieFlowers.length}</div>
+              </div>
+              </div>
+              </Link>
+            ) : (
+              <Link href="/min-lista">
+              <div className="px-4 hover:bg-rose-700 py-7">
+
+              <Heart
+                fill="#f5f5f5"
+                width="30px"
+                height="30px"
+                
+              />
+              </div>
+              </Link>
+            )}
           <DropdownMenu.Root>
             <DropdownMenu.Trigger className="flex items-center hover:bg-rose-700 py-8 px-6">
               
