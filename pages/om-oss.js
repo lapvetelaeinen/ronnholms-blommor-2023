@@ -25,7 +25,7 @@ export default function Om() {
           </div>
         </div> */}
 
-        <div className="w-[100vw] h-[200px] relative">
+        <div className="w-full h-[200px] relative">
           <Image
             src={om2}
             fill

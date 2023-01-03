@@ -27,7 +27,7 @@ export default function MinLista() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="pt-[59px]">
-      <div className="w-[100vw] h-[200px] relative">
+      <div className="w-full h-[200px] relative">
           <Image
             src={stjarnoga2}
             fill

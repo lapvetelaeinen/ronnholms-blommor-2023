@@ -17,7 +17,7 @@ export default function Om() {
       <main className="pt-[59px] pb-60 bg-neutral-100">
 
 
-        <div className="w-[100vw] h-[200px] relative">
+        <div className="w-full h-[200px] relative">
           <Image
             src={oppet2}
             fill

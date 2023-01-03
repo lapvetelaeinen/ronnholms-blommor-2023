@@ -20,7 +20,7 @@ export default function Kontakt() {
       <main className="pt-[59px] pb-36 bg-neutral-100">
 
 
-        <div className="w-[100vw] h-[200px] relative">
+        <div className="w-full h-[200px] relative">
           <Image
             src={kontakt2}
             fill

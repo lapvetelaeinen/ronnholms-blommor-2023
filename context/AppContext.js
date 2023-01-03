@@ -1,5 +1,5 @@
 import { createContext, useState, useEffect } from "react";
-import { getCookie } from 'cookies-next';
+import { getCookie, setCookie } from 'cookies-next';
 
 const NavStateContext = createContext();
 
@@ -22,6 +22,7 @@ function NavStateProvider({ children }) {
       }
     } else {
       setCookieFlowers([]);
+      setCookie('liked', []);
     }
   }, [])
 

@@ -17,7 +17,7 @@ export default function Gallery() {
       <main className="pt-[59px] bg-neutral-100">
 
 
-        <div className="w-[100vw] h-[200px] relative">
+        <div className="w-full h-[200px] relative">
           <Image
             src={galleri2}
             fill
