@@ -95,6 +95,21 @@ export default function Home() {
     setFlowers(initialFlowers);
   }, []);
 
+  function PreloadImages() {
+    useEffect(() => {
+      const images = ['/galleri2.jpg', '/kontakt2.jpg'];
+  
+      images.forEach(image => {
+        const imgElement = new global.Image();
+        imgElement.src = image;
+      });
+    }, []);
+  
+    return null;
+  }
+
+  PreloadImages();
+
   return (
     <div className="">
       <Head>
