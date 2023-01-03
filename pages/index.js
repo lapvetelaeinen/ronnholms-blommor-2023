@@ -8,6 +8,7 @@ import Link from "next/link";
 import FlowerCard from "../components/FlowerCard";
 import profilePic from "../public/leif.webp";
 import Image from "next/image";
+import solros2 from "../public/solros2.jpg";
 
 export default function Home() {
   const [flowers, setFlowers] = useState([]);
@@ -120,7 +121,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="pt-[59px]">
-        <div className="bg-[url(/solros2.jpg)] bg-cover relative h-[400px] md:h-[550px]">
+        {/* <div className="bg-[url(/solros2.jpg)] bg-cover relative h-[400px] md:h-[550px]">
           <div className="flex flex-col justify-center items-center bg-black bg-opacity-40 w-full px-10 py-8 md:py-8 md:px-12 h-[400px] md:h-[550px]">
             <h1 className="text-white text-3xl font-heading text-center leading-normal mb-10">
               Sommarblommor odlade i Närpes
@@ -131,7 +132,28 @@ export default function Home() {
               </button>
             </Link>
           </div>
+        </div> */}
+
+        <div className="w-full h-[400px] md:h-[550px] relative">
+          <Image
+            src={solros2}
+            fill
+            placeholder="blur"
+            priority
+            className="object-cover overflow-hidden"
+          />
+          <div className="absolute flex flex-col justify-center items-center bg-black bg-opacity-40 w-full px-10 py-8 md:py-8 md:px-12 h-[400px] md:h-[550px]">
+          <h1 className="text-white text-3xl font-heading text-center leading-normal mb-10">
+              Sommarblommor odlade i Närpes
+            </h1>
+            <Link href="/oppettider">
+              <button className="text-neutral-200 py-4 px-6 rounded-xl bg-rose-500 shadow-lg hover:bg-rose-600">
+                Platser och öppettider
+              </button>
+            </Link>
+          </div>
         </div>
+
         <div className="md:p-14">
           <div className="flex justify-between md:flex-col items-center bg-neutral-100">
             <h2 className="p-4 text-5xl font-heading leading-normal">
