@@ -5,7 +5,7 @@ import { FormattedMessage, useIntl } from "react-intl";
 import profilePic from "../public/leif.webp";
 import om2 from "../public/om2.jpg";
 
-export default function Om({ imageUrl }) {
+export default function Om() {
   const intl = useIntl();
 
   return (
@@ -25,8 +25,9 @@ export default function Om({ imageUrl }) {
         </div>
         <div className="w-[100vw] h-[200px] relative">
           <Image
-          src={imageUrl}
+          src={om2}
           fill
+          placeholder="blur"
           priority
           sizes="(max-width: 768px) 100vw,
               (max-width: 1200px) 50vw,
@@ -81,15 +82,4 @@ export default function Om({ imageUrl }) {
       </main>
     </div>
   );
-}
-
-
-export async function getStaticProps() {
-  const imageUrl = '/om2.jpg';
-
-  return {
-    props: {
-      imageUrl,
-    },
-  }
 }
