@@ -102,8 +102,8 @@ function MobileNav() {
 
           <div
             className={`bg-red-400 w-full z-50 min-h-[100vh] absolute ${
-              isOpen ? "left-0" : "-left-full"
-            } transition-all ease-in-out duration-500`}
+              isOpen ? "left-0 transition-all ease-in-out duration-500" : "-left-full "
+            } `}
           >
             <div className="bg-slate-300 flex justify-between">
               <Link

@@ -39,8 +39,8 @@ export default function Kontakt() {
           <div className="flex flex-col md:flex-row items-center gap-8">
             <Image src={profilePic} width={`40vw`} className="rounded-full" />
             <div className="md:pl-12">
-              <p className="text-2xl text-neutral-700 text-center md:text-start">
-                Nu när du surfat runt på vår hemsida så kanske det finns några frågor som du vill ställa oss. Du kan enkelt skicka ett mail med hjälp av formuläret nedan.
+              <p className="text-xl text-start md:text-2xl text-neutral-700">
+                Nu när du surfat runt på vår hemsida så kan det ju hända att några frågor uppstått. I sådana fall är det enkelt att skicka ett mail med hjälp av formuläret nedan.
               </p>
               
 
@@ -49,7 +49,7 @@ export default function Kontakt() {
           <div className="flex flex-col items-center justify-center pt-8 md:pt-16">
 
           <Contact/>
-          <p className="text-lg text-neutral-600 mt-8 text-center">Om du föredrar att ringa så når du Leif på mobilnummer: +358 50 086 3834</p>
+          <p className="text-lg text-neutral-400 mt-16 text-center">Om du föredrar att ringa så når du Leif på mobilnummer: +358 50 086 3834</p>
           </div>
         </div>
 
