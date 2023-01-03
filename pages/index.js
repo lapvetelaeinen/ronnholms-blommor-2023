@@ -95,20 +95,22 @@ export default function Home() {
     setFlowers(initialFlowers);
   }, []);
 
-  function PreloadImages() {
-    useEffect(() => {
-      const images = ['/galleri2.jpg', '/kontakt2.jpg'];
+  // function PreloadImages() {
+  //   useEffect(() => {
+  //     const images = ['/galleri2.jpg', '/kontakt2.jpg', '/om2.jpg', '/oppet2.jpg', '/rod-blomma2.jpg', '/stjarnoga2.jpg'];
   
-      images.forEach(image => {
-        const imgElement = new global.Image();
-        imgElement.src = image;
-      });
-    }, []);
+  //     images.forEach(image => {
+  //       const imgElement = new global.Image();
+  //       imgElement.src = image;
+  //     });
+  //   }, []);
   
-    return null;
-  }
+  //   return null;
+  // }
 
-  PreloadImages();
+  // PreloadImages();
+
+
 
   return (
     <div className="">

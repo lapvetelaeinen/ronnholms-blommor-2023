@@ -5,7 +5,7 @@ import { FormattedMessage, useIntl } from "react-intl";
 import profilePic from "../public/leif.webp";
 import om2 from "../public/om2.jpg";
 
-export default function Om() {
+export default function Om({ imageUrl }) {
   const intl = useIntl();
 
   return (
@@ -18,6 +18,22 @@ export default function Om() {
       <main className="pt-[59px] pb-36 bg-neutral-100">
         <div className="bg-[url(/om2.jpg)] bg-cover bg-center relative h-[200px] md:h-[200px]">
           <div className="flex flex-col justify-center items-center bg-black bg-opacity-40 w-full px-10 py-8 md:py-8 md:px-12 h-[200px] md:h-[200px]">
+            <h1 className="text-white text-3xl font-heading text-center leading-normal">
+              Om oss
+            </h1>
+          </div>
+        </div>
+        <div className="w-[100vw] h-[200px] relative">
+          <Image
+          src={imageUrl}
+          fill
+          priority
+          sizes="(max-width: 768px) 100vw,
+              (max-width: 1200px) 50vw,
+              33vw"
+              className="object-cover overflow-hidden"
+          />
+                    <div className="absolute flex flex-col justify-center items-center bg-black bg-opacity-40 w-full px-10 py-8 md:py-8 md:px-12 h-[200px] md:h-[200px]">
             <h1 className="text-white text-3xl font-heading text-center leading-normal">
               Om oss
             </h1>
@@ -65,4 +81,15 @@ export default function Om() {
       </main>
     </div>
   );
+}
+
+
+export async function getStaticProps() {
+  const imageUrl = '/om2.jpg';
+
+  return {
+    props: {
+      imageUrl,
+    },
+  }
 }
