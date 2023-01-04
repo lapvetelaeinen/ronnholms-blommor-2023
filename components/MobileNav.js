@@ -46,12 +46,10 @@ function MobileNav() {
   useEffect(() => {
 
     if(isOpen){
-      document.body.style.overflow = "hidden";
-      document.body.style.WebkitOverflowScrolling = 'touch';
+      document.documentElement.style.overflow = 'hidden';
       document.body.style.width = "100%";
     } else {
-      document.body.style.overflow = "auto";
-      document.body.style.WebkitOverflowScrolling = '';
+      document.documentElement.style.overflow = "auto";
     }
 
   });
