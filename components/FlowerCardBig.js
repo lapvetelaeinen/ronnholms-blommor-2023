@@ -26,15 +26,20 @@ const likeFlower = (flower) => {
     setIsLiked(!isLiked);
     console.log(cookieFlowers);
 
+    var now = new Date();
+    var time = now.getTime();
+    var expireTime = time + 1000*36000;
+    now.setTime(expireTime);
+
     if(cookie){
         const oldCookie = JSON.parse(cookie);
         toggleObjectInArray(oldCookie, flower);
-        setCookie('liked', oldCookie);
+        setCookie('liked', oldCookie, { expires: now });
         setCookieFlowers(oldCookie);
     } else {
         const newCookie = [];
         newCookie.push(flower);
-        setCookie('liked', newCookie);
+        setCookie('liked', newCookie, { expires: now });
         setCookieFlowers(newCookie);
     }
 }
