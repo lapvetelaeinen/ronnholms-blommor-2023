@@ -48,8 +48,10 @@ function MobileNav() {
     if(isOpen){
       document.documentElement.style.overflow = 'hidden';
       document.body.style.width = "100%";
+      document.documentElement.style.WebkitOverflowScrolling = 'none';
     } else {
       document.documentElement.style.overflow = "auto";
+      document.documentElement.style.WebkitOverflowScrolling = 'touch';
     }
 
   });
