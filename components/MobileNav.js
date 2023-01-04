@@ -44,13 +44,16 @@ function MobileNav() {
   };
 
   useEffect(() => {
-    isOpen
-      ? (document.body.style.overflow = "hidden")
-      : (document.body.style.overflow = "auto");
-    isOpen
-      ? (document.body.style.position = "fixed")
-      : (document.body.style.position = "static");
-    isOpen ? (document.body.style.width = "100%") : null;
+
+    if(isOpen){
+      document.body.style.overflow = "hidden";
+      document.body.style.WebkitOverflowScrolling = 'touch';
+      document.body.style.width = "100%";
+    } else {
+      document.body.style.overflow = "auto";
+      document.body.style.WebkitOverflowScrolling = '';
+    }
+
   });
 
   return (
