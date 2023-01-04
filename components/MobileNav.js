@@ -20,6 +20,7 @@ function MobileNav() {
   const { cookieFlowers, setCookieFlowers } = useContext(NavStateContext);
   const [isOpen, setIsOpen] = useState(false);
 
+
   const router = useRouter();
 
   const { asPath } = router;
@@ -56,9 +57,11 @@ function MobileNav() {
 
   });
 
+
+
   return (
     <>
-      <div className="fixed z-50 w-full">
+      <div className={`${"sticky top-0 z-50 w-full"}`}>
         <div className="relative">
           <div className="bg-rose-600 flex justify-between items-center py-3 px-4 md:hidden">
             {isOpen ? (
