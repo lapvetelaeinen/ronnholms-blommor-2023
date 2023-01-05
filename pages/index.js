@@ -38,7 +38,7 @@ export default function Home() {
       category: "Hedera Helix",
       stock: "yes",
       sizes: "12 cm kruka",
-      name: "Murgröna Mein Herz",
+      name: "Murgröna Mein herz",
       imgName: "hedera-helix-mein-herz.jpg",
     },
     {
