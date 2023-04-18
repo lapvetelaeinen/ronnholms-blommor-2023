@@ -93,7 +93,7 @@ function DesktopNav() {
               </div>
               </Link>
             )}
-          <DropdownMenu.Root>
+          {/* <DropdownMenu.Root>
             <DropdownMenu.Trigger className="flex items-center hover:bg-rose-700 py-8 px-6">
               
               {locale == "se" ? <Se width={20} /> : <Fi width={20} />}
@@ -119,7 +119,7 @@ function DesktopNav() {
               </DropdownMenu.Item>
 
             </DropdownMenu.Content>
-          </DropdownMenu.Root>
+          </DropdownMenu.Root> */}
         </div>
       </div>
     </>

@@ -111,7 +111,7 @@ function MobileNav() {
               isOpen ? "left-0 transition-all ease-in-out duration-500" : "-left-full "
             } `}
           >
-            <div className="bg-slate-300 flex justify-between">
+            {/* <div className="bg-slate-300 flex justify-between">
               <Link
                 key={locales[0]}
                 href="/"
@@ -142,7 +142,7 @@ function MobileNav() {
                   <p className="pl-2 text-lg">Suomi</p>
                 </div>
               </Link>
-            </div>
+            </div> */}
             <div className="flex flex-col font-appareo text-xl text-neutral-200">
               <Link href="/" onClick={() => toggleNav()}>
                 <div
